@@ -62,7 +62,7 @@ DFS tìm ra đường đi: `S → A → B → E → H` với tổng trọng số
 ### 4.4 Kết Quả trên Đồ Thị Mẫu 7 (Không Trọng Số, Mật Độ Cao)
 
 BFS tìm ra đường đi: `S → E → H` là đường đi ngắn nhất với 2 cạnh.  
-DFS tìm ra một đường đi: `S → A → E → H` với 3 cạnh.
+DFS tìm ra một đường đi: `S → A → B → C → F → G → H` với 6 cạnh.
 
 ## 5. Câu Hỏi Lý Thuyết
 
@@ -103,6 +103,30 @@ Lấy G: G là đích, trả về [S, A, C, D, G]
 
 Kết quả: Đường đi DFS: S → A → C → D → G
 
+
+### Đồ thị mẫu 3
+Đồ thị mẫu 3:
+BFS:
+Khởi tạo: Hàng đợi = [(S, [S])], Đã thăm = {S}
+Lấy S, thêm A, B: Hàng đợi = [(A, [S, A]), (B, [S, B])], Đã thăm = {S, A, B}
+Lấy A, thêm C: Hàng đợi = [(B, [S, B]), (C, [S, A, C])], Đã thăm = {S, A, B, C}
+Lấy B, thêm D: Hàng đợi = [(C, [S, A, C]), (D, [S, B, D])], Đã thăm = {S, A, B, C, D}
+Lấy C, không có đỉnh mới.
+Lấy D, không có đỉnh mới.
+Vậy là ta không tìm thấy G.
+
+DFS:
+Khởi tạo: Ngăn xếp = [(S, [S])], Đã thăm = {S}
+Lấy S, thêm A: Ngăn xếp = [(A, [S, A])], Đã thăm = {S, A}
+Lấy A, thêm C: Ngăn xếp = [(C, [S, A, C])], Đã thăm = {S, A, C}
+Lấy C, không có đỉnh mới.
+Quay lại, lấy B: Ngăn xếp = [(B, [S, B])], Đã thăm = {S, A, C, B}
+Lấy B, thêm D: Ngăn xếp = [(D, [S, B, D])], Đã thăm = {S, A, C, B, D}
+Lấy D, không có đỉnh mới.
+Vậy là ta không tìm thấy G.
+
+
+
 ### 6.3 BFS trên Đồ Thị Mẫu 6 (Có Trọng Số):
 ```
 Khởi tạo: Hàng đợi = [(S, [S], 0)], Đã thăm = {S}
@@ -120,23 +144,38 @@ Lấy H: H là đích, trả về [S, A, B, E, H], tổng trọng số 21
 Kết quả: Đường đi BFS: S → A → B → E → H với tổng trọng số 21
 
 ### 6.4 Các Đường Đi BFS từ S đến H trên Đồ Thị Mẫu 7:
-1. S → E → H (2 cạnh)
-2. S → A → E → H (3 cạnh)
-3. S → D → E → H (3 cạnh)
-4. S → A → B → E → H (4 cạnh)
-5. S → E → F → H (3 cạnh)
+['S', 'E', 'H']
+['S', 'A', 'E', 'H']
+['S', 'D', 'E', 'H']
+['S', 'E', 'F', 'H']
+['S', 'A', 'B', 'E', 'H']
+['S', 'A', 'B', 'F', 'H']
+['S', 'A', 'D', 'E', 'H']
+['S', 'A', 'E', 'F', 'H']
+['S', 'D', 'E', 'F', 'H']
+['S', 'E', 'F', 'G', 'H']
+['S', 'A', 'B', 'C', 'F', 'H']
+['S', 'A', 'B', 'C', 'G', 'H']
+['S', 'A', 'B', 'E', 'F', 'H']
+['S', 'A', 'B', 'F', 'G', 'H']
+['S', 'A', 'D', 'E', 'F', 'H']
+['S', 'A', 'E', 'F', 'G', 'H']
+['S', 'D', 'E', 'F', 'G', 'H']
+['S', 'A', 'B', 'C', 'F', 'G', 'H']
+['S', 'A', 'B', 'E', 'F', 'G', 'H']
+['S', 'A', 'D', 'E', 'F', 'G', 'H']
 
 ## 7. Bài Tập Nâng Cao
 
 ### 7.1 So Sánh Hiệu Suất BFS và DFS
 
 Khi chạy trên đồ thị mẫu 6 (có trọng số):
-- BFS: Thời gian chạy ≈ 0.000190 giây
-- DFS: Thời gian chạy ≈ 0.000207 giây
+- BFS: Thời gian chạy ≈ 0.000072 giây
+- DFS: Thời gian chạy ≈ 0.000045 giây
 
 Khi chạy trên đồ thị mẫu 7 (không trọng số):
-- BFS: Thời gian chạy ≈ 0.000138 giây
-- DFS: Thời gian chạy ≈ 0.000124 giây
+- BFS: Thời gian chạy ≈ 0.000040 giây
+- DFS: Thời gian chạy ≈ 0.000042 giây
 
 Nhận xét: BFS và DFS có thời gian thực thi tương đương nhau trên các đồ thị nhỏ. Sự khác biệt về thời gian có thể trở nên đáng kể trên các đồ thị lớn hoặc không gian trạng thái rộng.
 
@@ -151,7 +190,18 @@ Khi chạy trên đồ thị phức tạp từ S đến K:
 - Tuy nói rằng việc tìm BFS và DFS điều có ưu điểm riêng của nó, nhưng khi bê lên code, thì nó sẽ khó ở chỗ để không bị rơi vào vòng lặp.
 - Thường thì ta sẽ dễ bị thấy chương trình xét đỉnh này xong lại xoay lên đỉnh khác rồi lại về đỉnh này. Nghĩa là thay vì đi đường ngắn nhất, nó sẽ xét lặp lại.
 - Để giải quyết tình trạng này, ta sẽ chỉnh sửa input đồ thị vào, bỏ đi những node chung để không bị xét lặp lại. 
-- Đó là lí do tại sao, khi mà ta mô hình hoá thủ công bằng tay thì ra được đường ngắn. Mà khi bê lên chương trình thì lại ra đường dài vô cùng, mặc dù code đúng về cách tìm kiếm. 
+- Đó là lí do tại sao, khi mà ta mô hình hoá thủ công bằng tay thì ra được đường ngắn. Mà khi bê lên chương trình thì lại ra đường dài vô cùng, mặc dù code đúng về cách tìm kiếm.
+
+### Nói thêm về tại sao một số code dùng "từ điển dùng từ điển", mà có một số cái lại không sử dụng nó:
+- Vì không thể lưu được trọng số dễ dàng
+- Truy cập không hiệu quả
+- Không phù hợp với các nút không có thứ tự
+- Phù hợp sử dụng cho đồ thị có trọng số.
+
+### Tại sao không dùng từ điển lồng từ điển hết luôn cho khoẻ?
+- Vì từ điển lồng từ điển chỉ phù hợp cho đồ thị có trọng số, vì chúng ta cần lưu trọng số mỗi cạnh
+- Dùng từ điển với danh sách khi đồ thị không có trọng số, vì ta chỉ cần liệt kê các nút kề mà không cần thêm thông tin gì về cạnh đó.
+
 
 
 
