@@ -52,3 +52,9 @@ if __name__ == "__main__":
         print(board)
         for row in board:
             print(" ".join(row))
+
+        print("Toa do cac quan hau (hàng, cột):", end=" ")
+        coordinates = []
+        for row, col in enumerate(solution):
+            coordinates.append(f"({row}, {col})")
+        print(", ".join(coordinates))
