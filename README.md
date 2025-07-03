@@ -11,7 +11,13 @@ Repository được tổ chức theo các bài thực hành (LAB) với nội du
   - Depth-First Search (DFS)
   - Ứng dụng trên đồ thị không trọng số và có trọng số
 
-- *Các LAB tiếp theo sẽ được cập nhật...*
+- **LAB 04**: Thuật toán di truyền (Genetic Algorithm)
+  - Cài đặt thuật toán di truyền cơ bản
+  - Tìm cực đại của hàm số
+  - So sánh các phương pháp lựa chọn (Tournament vs Roulette)
+  - Trực quan hóa quá trình hội tụ của quần thể
+
+- **Các LAB tiếp theo sẽ được cập nhật...**
 
 ## 💻 Cài đặt
 
@@ -20,7 +26,7 @@ Repository được tổ chức theo các bài thực hành (LAB) với nội du
 ```bash
 # Cài đặt Python (phiên bản 3.7 trở lên)
 # Cài đặt các thư viện cần thiết
-pip install jupyter numpy matplotlib
+pip install jupyter numpy matplotlib pandas
 ```
 
 ## 🚀 Cách sử dụng
@@ -41,8 +47,33 @@ jupyter notebook
 ## ⚙️ Yêu cầu hệ thống
 
 - Python 3.7+
-- Jupyter Notebook
-- Các thư viện Python: numpy, matplotlib (và các thư viện khác được liệt kê trong từng bài lab)
+- Jupyter Notebook/Lab
+- Các thư viện Python: numpy, matplotlib, pandas (và các thư viện khác được liệt kê trong từng bài lab)
+
+## 📂 Cấu trúc thư mục
+
+````markdown
+Intro-to-Artificial-Intelligence/
+│
+├── LAB01_BFS_DFS/
+│   ├── lab01_bfs.ipynb
+│   ├── lab01_dfs.ipynb
+│   └── README.md
+│
+├── LAB04_Genetic_Algorithm/
+│   ├── lab04_genetic_algorithm.ipynb
+│   ├── lab04_tournament_selection.ipynb
+│   ├── lab04_roulette_selection.ipynb
+│   └── README.md
+│
+├── README.md
+└── requirements.txt
+````
+
+- **LAB01_BFS_DFS/**: Chứa các bài thực hành về thuật toán tìm kiếm mù.
+- **LAB04_Genetic_Algorithm/**: Chứa các bài thực hành về thuật toán di truyền.
+- **README.md**: Tài liệu hướng dẫn chung cho repository.
+- **requirements.txt**: Danh sách các thư viện Python cần thiết cho các bài thực hành.
 
 ## 👨‍🏫 Đóng góp
 
