@@ -11,6 +11,12 @@ Repository được tổ chức theo các bài thực hành (LAB) với nội du
   - Depth-First Search (DFS)
   - Ứng dụng trên đồ thị không trọng số và có trọng số
 
+- **LAB 03**: Bài toán N-Queens và thuật toán Quay lui (Backtracking)
+  - Giải quyết bài toán 4-Queens
+  - Giải quyết bài toán 8-Queens
+  - Cài đặt thuật toán quay lui để tìm tất cả lời giải
+  - Biểu diễn lời giải trên bàn cờ và dạng tọa độ
+
 - **LAB 04**: Thuật toán di truyền (Genetic Algorithm)
   - Cài đặt thuật toán di truyền cơ bản
   - Tìm cực đại của hàm số
@@ -60,6 +66,10 @@ Intro-to-Artificial-Intelligence/
 │   ├── lab01_dfs.ipynb
 │   └── README.md
 │
+├── LAB03_N_Queens_Backtracking/
+│   ├── lab03_n_queens.ipynb
+│   └── README.md
+│
 ├── LAB04_Genetic_Algorithm/
 │   ├── lab04_genetic_algorithm.ipynb
 │   ├── lab04_tournament_selection.ipynb
@@ -71,6 +81,7 @@ Intro-to-Artificial-Intelligence/
 ````
 
 - **LAB01_BFS_DFS/**: Chứa các bài thực hành về thuật toán tìm kiếm mù.
+- **LAB03_N_Queens_Backtracking/**: Chứa các bài thực hành về bài toán N-Queens và thuật toán quay lui.
 - **LAB04_Genetic_Algorithm/**: Chứa các bài thực hành về thuật toán di truyền.
 - **README.md**: Tài liệu hướng dẫn chung cho repository.
 - **requirements.txt**: Danh sách các thư viện Python cần thiết cho các bài thực hành.
