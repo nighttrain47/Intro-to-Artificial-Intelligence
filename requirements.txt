@@ -1,0 +1,32 @@
+# Basic scientific computing libraries
+numpy>=1.21.0
+matplotlib>=3.5.0
+pandas>=1.3.0
+
+# Machine Learning
+scikit-learn>=1.0.0
+nltk>=3.6.0
+
+# Deep Learning
+tensorflow>=2.8.0
+keras>=2.8.0
+
+# Web Applications
+streamlit>=1.10.0
+flask>=2.0.0
+
+# Visualization
+seaborn>=0.11.0
+plotly>=5.0.0
+
+# Jupyter
+jupyter>=1.0.0
+ipykernel>=6.0.0
+
+# Text Processing
+wordcloud>=1.8.0
+textblob>=0.17.0
+
+# Utilities
+requests>=2.25.0
+scipy>=1.7.0
